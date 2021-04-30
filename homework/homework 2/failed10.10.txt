@@ -1,0 +1,18 @@
+# define this function
+def in_bisect(word_list, word):
+    mid = len(word_list)//2
+   # print("first word is ", word_list[0])
+    print(word_list[mid])
+    print(len(word_list))
+    if  len(word_list) == 1 and word_list[mid] != word:
+        return False
+    elif word_list[mid] == word:
+        return True
+    elif word_list[mid] > word:
+        #print("found in first half")
+        in_bisect(word_list[:mid], word)
+    elif word_list[mid] < word:
+        #print("found in last half")
+        in_bisect(word_list[mid:], word)
+    else:
+        print("hit last else")
